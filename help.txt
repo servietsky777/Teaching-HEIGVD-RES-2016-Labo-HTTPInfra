@@ -30,3 +30,9 @@ https://help.ubuntu.com/lts/serverguide/httpd.html
 https://httpd.apache.org/docs/2.4/
 
 https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/
+
+
+# Etape 3
+Ajouter dans le dns : drabble.ch 192.168.99.100 
+Accéder avec http://drabble.ch:8080
+Ajouter à C:\Windows\System32\drivers\etc
