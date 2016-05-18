@@ -3,7 +3,9 @@ docker run -d -p 9090:80 php:5.6-apache
 
 # Build and run container
 docker build -t res/apache_php .
+docker build -t res/express_books .
 docker run -d -p 9090:80 res/apache_php
+docker run -p 3000:3000 res/express_books
 
 # Get info on docker vm
 docker ps
@@ -15,13 +17,16 @@ telnet 192.168.99.100 9090
 GET / HTTP/1.0
 
 # Connect to vm
-docker exec -it nom_vm /bin/bash
+docker exec -it nom_vm /bin/bash 
+docker run -it nom_vm /bin/bash
+
+# Content location
+/var/www/html
+/etc/apache2/sites-available/000-default.conf
 
 # Resources
 https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
 https://help.ubuntu.com/lts/serverguide/httpd.html
 https://httpd.apache.org/docs/2.4/
 
-# Content
-/var/www/html
-/etc/apache2/sites-available/000-default.conf
+https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/

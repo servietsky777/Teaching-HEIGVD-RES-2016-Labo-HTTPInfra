@@ -1,0 +1,8 @@
+# Use node image
+FROM node:4.4
+
+# Copy html file to the htdocs directory on the server
+COPY src/ /opt/app
+
+# Start node
+CMD ["node", "/opt/app/index.js"]

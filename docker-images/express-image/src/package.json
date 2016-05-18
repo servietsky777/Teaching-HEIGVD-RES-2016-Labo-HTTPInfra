@@ -1,0 +1,15 @@
+{
+  "name": "books",
+  "version": "0.1.0",
+  "description": "Docker test with express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antoine Drabble",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.0.3",
+    "express": "^4.13.4"
+  }
+}
