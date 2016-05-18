@@ -1,0 +1,5 @@
+# Use php apache image
+FROM php:5.6-apache
+
+# Copy html file to the htdocs directory on the server
+COPY src/ /var/www/html/
