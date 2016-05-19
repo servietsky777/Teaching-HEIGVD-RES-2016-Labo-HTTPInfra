@@ -4,8 +4,10 @@ docker run -d -p 9090:80 php:5.6-apache
 # Build and run container
 docker build -t res/apache_php .
 docker build -t res/express_books .
+docker build -t res/apache_reverse_proxy .
 docker run -d -p 9090:80 res/apache_php
-docker run -p 3000:3000 res/express_books
+docker run -d -p 3000:3000 res/express_books
+docker run -d -p 8080:80 res/apache_reverse_proxy
 
 # Get info on docker vm
 docker ps
@@ -15,6 +17,9 @@ docker inspect nom_vm
 # Connect to the server and send http request
 telnet 192.168.99.100 9090
 GET / HTTP/1.0
+Host: drabble.res.ch
+GET /api/books/ HTTP/1.0
+Host: drabble.res.ch
 
 # Connect to vm
 docker exec -it nom_vm /bin/bash 
