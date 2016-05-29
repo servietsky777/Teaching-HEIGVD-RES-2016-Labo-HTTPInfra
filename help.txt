@@ -1,5 +1,5 @@
 # Start and a container with php
-docker run -d -p 9090:80 php:5.6-apache
+docker run -d -p 9090:80 --name apache_static php:5.6-apache
 
 # Build and run container
 docker build -t res/apache_php .

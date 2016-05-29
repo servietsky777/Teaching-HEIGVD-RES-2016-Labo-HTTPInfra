@@ -6,6 +6,9 @@
 		<link rel="stylesheet" type="text/css" href="design.css">
 		<link rel="icon" type="image/png" href="cv.png" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		
+		<!-- Custom script to load books -->
+        <script src="js/books.js"></script>
 	</head>
 	<body>	
 		<div id="container">
@@ -117,7 +120,12 @@
 					</table><br/>
 				</div>
 			</div>
-			
+			<div>
+				<div class="block">
+						<h2>Random book</h2>
+						<span id="books"></span>
+				</div>
+			</div>
 			<div id="info">
 				<div class="block">
 					<table style="width: 100%; text-align: center;">

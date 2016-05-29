@@ -4,5 +4,9 @@ FROM node:4.4
 # Copy html file to the htdocs directory on the server
 COPY src/ /opt/app
 
+# Install vi
+RUN apt-get update && \
+	apt-get install -y vim
+
 # Start node
 CMD ["node", "/opt/app/index.js"]
