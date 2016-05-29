@@ -1,6 +1,16 @@
 # Use node image
 FROM php:5.6-apache
 
+# Install vi
+RUN apt-get update && \
+	apt-get install -y vim
+
+# Copy the script which will be executed at launch to setup the dynamic reverse proxy
+COPY apache2-foreground /usr/local/bin
+
+# Copy the php template to generate the conf
+COPY templates/ /var/apache2
+
 # Copy conf files on the server
 COPY conf/ /etc/apache2
 
@@ -10,9 +20,6 @@ RUN a2enmod proxy proxy_http
 # Set enabled sites to those in the configuration files
 RUN a2ensite 000-* 001-*
 
-# Install vi
-RUN apt-get update && \
-	apt-get install -y vim
-
 # Restart apache servier
 #RUN service apache2 reload
+
