@@ -1,9 +1,9 @@
 #!/bin/bash
 set -e
 
-# Run config-template to generate apache conf
-php /var/apache2/templates/config-template.php > /etc/apache2/sites-available/001-reverse-proxy.conf
+php /var/apache2/config-template.php > /etc/apache2/sites-available/001-reverse-proxy.conf
 
+echo "WTFFFFF $STATIC_APP"
 # Apache gets grumpy about PID files pre-existing
 rm -f /var/run/apache2/apache2.pid
 
